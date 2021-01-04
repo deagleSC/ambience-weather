@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import { Search, Compass } from 'react-bootstrap-icons'
+import { Search } from 'react-bootstrap-icons'
 class Card extends React.Component {
     constructor() {
         super()
@@ -21,28 +21,6 @@ class Card extends React.Component {
             wind_speed: "windspeed",
             wind_direction: "winddirection"
         }
-    }
-
-    
-    getDataGeo = (e) => {
-
-        var lat = 0
-        var lon = 0
-        navigator.geolocation.getCurrentPosition(function(position) {
-            lat = position.coords.latitude
-            lon = position.coords.longitude
-            console.log(lat)
-            console.log(lon)
-            let api = 'https://api.openweathermap.org/data/2.5/weather?'
-            let key = '&APPID=11c8e92be9bd346ea62a9e154d1b617c&units=metric'
-            let url = api + 'lat=' + lat + '&lon=' + lon + key
-
-            fetch(url)
-            .then(res => res.json())
-            .then(result => {
-                
-            })
-            });
     }
 
     getDataCity = (e) => {
@@ -87,7 +65,6 @@ class Card extends React.Component {
             <div className = "searchdiv">
                 <input id = "searchTerm" type = "search" placeholder = "Search for a city"></input>
                 <button type = "button" onClick = {this.getDataCity}><Search /></button>
-                <button type = "button" onClick = {this.getDataGeo}><Compass /></button>
             </div>
             <div className = "card row">
                 {!this.state.showData && <h3>Start searching</h3>}
