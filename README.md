@@ -1,6 +1,6 @@
 # View Deplyment
 
-[https://ambienceweather.web.app/](https://ambienceweather.web.app/)
+[ambienceweather.web.app](https://ambienceweather.web.app/)
 
 # Getting Started with Create React App
 
