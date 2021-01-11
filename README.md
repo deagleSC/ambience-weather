@@ -1,4 +1,4 @@
-# View Deplyment
+# Use App
 
 [ambienceweather.web.app](https://ambienceweather.web.app/)
 
