@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.css'
 import { Search } from 'react-bootstrap-icons'
+
 class Card extends React.Component {
     constructor() {
         super()
@@ -24,12 +25,14 @@ class Card extends React.Component {
     }
 
     getDataCity = (e) => {
+
         let searchTerm = document.getElementById("searchTerm")
         if (searchTerm.value == "" || searchTerm.value == undefined) 
             return
         
         let api = 'https://api.openweathermap.org/data/2.5/weather?'
-        let key = '&APPID=11c8e92be9bd346ea62a9e154d1b617c&units=metric'
+        let key = process.env.REACT_APP_API_KEY
+        console.log (key)
         let url = api + 'q=' + searchTerm.value + key
         console.log(url)
         fetch(url)
